@@ -1,0 +1,6 @@
+
+
+
+
+class SetupInfo(object):
+    pass
