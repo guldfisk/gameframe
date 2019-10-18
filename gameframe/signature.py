@@ -2,8 +2,7 @@
 from abc import ABC, abstractmethod
 
 
-
-class GameObserver(object):
+class GameObserver(ABC):
     pass
 
 

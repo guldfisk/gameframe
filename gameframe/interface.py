@@ -8,3 +8,6 @@ class GameInterface(ABC):
     @abstractmethod
     def select_option(self) -> t.Any:
         pass
+
+    @abstractmethod
+    def notify_

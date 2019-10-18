@@ -1,6 +1,5 @@
+from abc import ABC
 
 
-
-
-class SetupInfo(object):
+class SetupInfo(ABC):
     pass
