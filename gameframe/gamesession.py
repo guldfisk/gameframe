@@ -37,9 +37,6 @@ class GameSession(Process):
         seed: t.Optional[t.ByteString] = None,
     ) -> None:
         super().__init__()
-
-        self._connection = connection
-
         self._observer_signatures = frozenset(observer_signatures)
         self._player_signatures = frozenset(
             signature
@@ -48,9 +45,11 @@ class GameSession(Process):
             if isinstance(signature, PlayerSignature)
         )
 
-        self._interface = interface_type
+        self._connection_controller = connection_controller_type(self._observer_signatures)
+
+        self._interface = interface_type(self._connection_controller)
         self._setup_info = setup_info
-        self._game: Game = game_type(self._setup_info)
+        self._game: Game = game_type(self._setup_info, self._interface)
         self._seed: t.ByteString = (
             str(hash(time.time())).encode('ASCII')
             if seed is None else

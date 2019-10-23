@@ -15,5 +15,5 @@ class SignatureConnection(object):
 
 class ConnectionController(ABC):
 
-    def __init__(self, connections: t.Iterable[SignatureConnection]):
+    def __init__(self, signatures: t.Iterable[ObserverSignature]):
         pass
