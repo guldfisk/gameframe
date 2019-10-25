@@ -29,8 +29,8 @@ class GameSession(Process):
     
     def __init__(
         self,
-        connection_controller_type: t.Type[ConnectionController],
         observer_signatures: t.Iterable[ObserverSignature],
+        connection_controller_type: t.Type[ConnectionController],
         interface_type: t.Type[GameInterface],
         setup_info: SetupInfo,
         game_type: t.Type[Game],

@@ -18,11 +18,6 @@ class Card(object):
     pass
 
 
-class Player(object):
-    pass
-
-
-
 class Game(EventSession):
 
     def __init__(self, setup_info: SetupInfo, interface: GameInterface):
