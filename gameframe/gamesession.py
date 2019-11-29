@@ -49,7 +49,7 @@ class GameSession(Process):
 
         self._interface = interface_type(self._connection_controller)
         self._setup_info = setup_info
-        self._game: Game = game_type(self._setup_info, self._interface)
+        self._game: Game = game_type(self._setup_info, self._interface, self._player_signatures)
         self._seed: t.ByteString = (
             str(hash(time.time())).encode('ASCII')
             if seed is None else
